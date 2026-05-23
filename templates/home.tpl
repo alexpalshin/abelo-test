@@ -12,7 +12,7 @@
                     <a href="?page=category&id={$item.category.id}">View All</a>
                 </div>
                 
-                <div class="category-block__latest-posts">
+                <div class="category-block__posts-list latest-posts">
                     {foreach $item.articles as $article}
                         {include file="partials/post_card.tpl" post=$article}
                     {foreachelse}
