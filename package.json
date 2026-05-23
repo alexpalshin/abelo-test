@@ -1,0 +1,12 @@
+{
+  "name": "php-blog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sass": "sass --style compressed assets/scss/main.scss assets/css/style.css",
+    "sass:watch": "sass --watch assets/scss/main.scss assets/css/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}

@@ -1,0 +1,18 @@
+.category-block {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $border-color;
+}
+
+.category-title a {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+.sorting {
+    margin-bottom: 1rem;
+    a.active {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
