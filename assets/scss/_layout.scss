@@ -1,8 +1,16 @@
+html {
+    font-size: 10px;
+
+    @media screen and (min-width: $lg) {
+        font-size: 16px;
+    }
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: $light-bg;
+    background: #ffffff;
     color: $text-color;
 }
 
@@ -16,6 +24,10 @@ header {
     }
 }
 
+main {
+    padding-top: 5rem;
+}
+
 footer {
     background: $primary-color;
     color: #fff;
@@ -24,10 +36,17 @@ footer {
     margin-top: 2rem;
 }
 
-main {
-    max-width: 960px;
+.container {
     margin: 0 auto;
     padding: 1rem;
+
+    @media screen and (min-width: $md) {
+        max-width: 75rem;
+    }
+    
+    @media screen and (min-width: $lg) {
+        max-width: 96rem;
+    }
 }
 
 .btn {
@@ -38,25 +57,27 @@ main {
     text-decoration: none;
     border-radius: 4px;
     &:hover {
-        background: darken($accent-color, 10%);
+        background: #21404d;
     }
 }
 
 .post-card {
-    border: 1px solid $border-color;
-    padding: 1rem;
     margin-bottom: 1rem;
-    background: #fff;
-    border-radius: 4px;
-    &-image {
+    
+    &__image {
+        width: 100%;
         max-width: 100%;
         height: auto;
+        border-radius: 1rem;
     }
-    &-title a {
+    &__internal {
+        padding: 0 1.7rem;
+    }
+    &__title a {
         color: $primary-color;
         text-decoration: none;
     }
-    &-meta {
+    &__meta {
         font-size: 0.85rem;
         color: #666;
     }

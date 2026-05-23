@@ -38,8 +38,8 @@ class CategoryController
             $sort = 'date';
         }
 
-        $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
-        $perPage = 10; 
+        $page = isset($_GET['p']) ? max(1, (int)$_GET['p']) : 1;
+        $perPage = 3; 
 
         $articleRepo = new ArticleRepository($pdo);
         $result = $articleRepo->getByCategoryPaginated($categoryId, $sort, $page, $perPage);

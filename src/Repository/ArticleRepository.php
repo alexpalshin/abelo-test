@@ -130,19 +130,19 @@ class ArticleRepository
             FROM articles a
             INNER JOIN article_category ac ON a.id = ac.article_id
             WHERE ac.category_id IN (
-                SELECT category_id FROM article_category WHERE article_id = :article_id
+                SELECT category_id FROM article_category WHERE article_id = :current_id
             )
-            AND a.id != :article_id
+            AND a.id != :exclude_id
             ORDER BY a.created_at DESC
             LIMIT :limit
         ";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue('article_id', $articleId, PDO::PARAM_INT);
+        $stmt->bindValue('current_id', $articleId, PDO::PARAM_INT);
+        $stmt->bindValue('exclude_id', $articleId, PDO::PARAM_INT);
         $stmt->bindValue('limit', $limit, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll();
     }
-
     /**
      * Returns categories for specific article
      * @param int $articleId

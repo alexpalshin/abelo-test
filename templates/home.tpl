@@ -6,7 +6,7 @@
         {foreach $categories_data as $item}
             <section class="category-block">
                 <div class="category-block__heading">
-                    <h2 class="category-title">
+                    <h2 class="category-block__title">
                         {$item.category.name|escape}
                     </h2>
                     <a href="?page=category&id={$item.category.id}">View All</a>

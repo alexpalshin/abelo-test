@@ -1,6 +1,6 @@
 <div class="pagination">
     {if $currentPage > 1}
-        <a href="?page=category&id={$smarty.get.id}&sort={$sort}&page={$currentPage-1}">Prev</a>
+        <a href="?page=category&id={$smarty.get.id}&sort={$sort}&={$currentPage-1}">Prev</a>
     {/if}
     
     {section name=p loop=$totalPages}
@@ -8,11 +8,11 @@
         {if $pNum == $currentPage}
             <span class="current">{$pNum}</span>
         {else}
-            <a href="?page=category&id={$smarty.get.id}&sort={$sort}&page={$pNum}">{$pNum}</a>
+            <a href="?page=category&id={$smarty.get.id}&sort={$sort}&p={$pNum}">{$pNum}</a>
         {/if}
     {/section}
     
     {if $currentPage < $totalPages}
-        <a href="?page=category&id={$smarty.get.id}&sort={$sort}&page={$currentPage+1}">Next</a>
+        <a href="?page=category&id={$smarty.get.id}&sort={$sort}&p={$currentPage+1}">Next</a>
     {/if}
 </div>
