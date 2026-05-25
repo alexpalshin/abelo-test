@@ -35,10 +35,13 @@ Features categories, articles, pagination, sorting.
 
 ---
 
-## Quick Start with /Docker
+## Local installation
 
 1. **Clone / copy the project** into a directory.
-2. Make sure you have a `.env` file in the root.
-3. Adjust `.env` file with your local MySQL credentials.
-4. Run `npm run sass` to compile CSS files, or `npm run sass:watch` to track changes.
-5. Head your browser to the project folder i.e. `localhost/abelo-test`.
+2. Create a MySQL database (e.g., blog) and import the schema: `mysql -u root -p blog < sql/schema.sql`.
+3. Copy .env.example to .env and fill in your database credentials.
+4. Install PHP dependencies: `composer install`.
+5. Install Node dependencies and compile SCSS: `npm install`, `npm run sass`.
+6. Run `npm run sass:watch` to track changes.
+7. Seed the database: `php seeds/seed.php`.
+5. Open `http://localhost/abelo-test` in your browser.
